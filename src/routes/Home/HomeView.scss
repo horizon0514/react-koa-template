@@ -1,0 +1,163 @@
+.home_wrapper{
+    margin : 20px 40px 0 40px;
+}
+
+.tag_sider{
+   width :200px; 
+   min-height : 620px;
+   float : left;
+   margin-right : 40px;
+   padding : 20px;
+   border : 1px solid #efefef;
+   background: #fff;
+}
+
+.tag_sider_title{
+    color : #333;
+    margin-bottom:10px;     
+}
+
+.tag_link_all{
+    color : #666;
+    &:before{
+        content : '#';
+        margin-right: 2px;
+        font-family: Consolas;
+    }
+}
+
+.tag_link_all_active{
+    color : #196ade;
+}
+
+.tag_list{
+    margin-top : 6px; 
+    .tag_list_item{
+       margin-bottom : 6px;
+       cursor : pointer;
+       &:before{
+        content : '#';
+        margin-right: 2px;
+        //color: #aaa;
+        font-family: Consolas;
+       } 
+       &:hover{
+        color : #196ade;
+        a{
+            color : #196ade;
+        }
+       }
+
+       a{
+         color : #666; 
+       }
+    }
+
+    .tag_list_item_active{
+        color : #196ade;
+        a{
+            color: #196ade;
+        }
+    }
+}
+
+.tag_count{
+    margin-left : 6px;
+    color : #ccc;
+}
+
+.content{
+    overflow : hidden;
+    .content_header{
+        text-align : center; 
+        padding-bottom : 40px;
+        border-bottom : 1px solid #efefef;
+        margin-bottom : 20px;
+        h2{
+            padding-top : 50px;
+            color : #196ade;
+            font-family: Georgia;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        .content_header_cui_title{
+            font-family: STKaiti,Georgia;
+            font-size : 21px;
+        }
+        p{
+            padding-top : 25px;
+        }
+
+        .content_header_count{
+            font-weight : 600;
+        }
+    }
+
+    .content_list{
+            
+    }
+
+    .page_arae{
+        display : flex;
+        .page_prev,
+        .page_next{
+            flex : 1;
+            cursor : pointer;
+            color : #196ade;
+        }
+        
+        .page_prev{
+            :global(.fa){
+                margin-right : 10px;
+            }
+        }
+
+        .page_next{
+            text-align : right;
+            :global(.fa){
+                margin-left : 10px;
+            }
+        }
+
+        .page_fake{
+            flex : 5;
+        }
+    }
+}
+
+
+.footer {
+	width:300px;
+	position:fixed;
+	bottom:0px;
+	left:50%;
+	height:60px;
+	overflow:hidden;
+	color:#999;
+	text-align:center;
+	font-size:12px;
+	line-height:60px;
+    margin-left : -150px;
+	
+	.footer_logo {
+		font-size:20px;
+        font-weight: 500;
+		color:#666;
+        font-family : STKaiti,Kaiti;		
+	}
+	
+	b {
+		font-size:20px;
+		color:#666;
+		margin:0 10px;
+	}
+	
+	.footer_links a {
+		font-size:12px;
+		font-weight:600;
+		margin-right:10px;
+		position:relative;
+		top:-1px;
+		color:#999;
+	}
+}

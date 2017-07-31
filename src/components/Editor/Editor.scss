@@ -1,0 +1,81 @@
+:global {
+  @import "~codemirror/lib/codemirror";
+  @import "~codemirror/theme/neo";
+
+  .cm-s-neo {
+    &.CodeMirror {
+      font-family: 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+      border: 1px solid #efefef;
+      border-top : 0;
+      font-size: 13px;
+      height: 100%;
+      font-weight: 500;
+      padding : 10px 8px;
+      textarea {
+        color: transparent;
+        border: 0;
+      }
+    }
+    .CodeMirror-cursor {
+      width: 2px;
+      border: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+    .cm-string {
+      color: #ED2865;
+    }
+    .cm-comment {
+      color: #9E9E9E;
+    }
+    .CodeMirror-matchingbracket {
+      border-bottom: 1.5px solid #11BCD8;
+      color: initial !important;
+    }
+    .CodeMirror-linebackground {
+      transition: background .3s;
+    }
+    .CodeMirror-activeline-background {
+      background: transparent;
+    }
+    &.CodeMirror-focused .CodeMirror-activeline-background {
+      background: #e8f2ff;
+    }
+    .CodeMirror-foldmarker {
+      color: #1d75b3;
+      line-height: .3;
+      cursor: pointer;
+      font-family: arial;
+    }
+    .CodeMirror-foldgutter {
+      width: .7em;
+    }
+    .CodeMirror-foldgutter-open,
+    .CodeMirror-foldgutter-folded {
+      cursor: pointer;
+      width: 12px;
+      text-align: center;
+      transition: color .3s;
+      font-family: Consolas;
+      font-size: 14px;
+    }
+    .CodeMirror-foldgutter-open:after {
+      content: "\25BE";
+    }
+    .CodeMirror-foldgutter-folded:after {
+      content: "\25B8";
+      color: #999;
+    }
+  }
+
+  .CodeMirror .cm-palette-hint {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0 2px 2px 5px;
+    border-radius: 50%;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    box-shadow:0 0 0 1px #fcfcfc, 0 0 0 2px #ddd;
+  }
+}

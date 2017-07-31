@@ -1,0 +1,54 @@
+.main_user{
+    margin : 30px 40px;
+}
+
+.user_profile{
+    width : 220px;
+    float : left;
+    margin-right : 20px;
+    border : 1px solid #efefef;
+    background : #fff;
+}
+
+.user_info{
+    text-align : center;
+    padding : 20px;
+}
+
+.user_img{
+    width : 96px;
+    height : 96px;
+    border-radius : 100%;
+}
+
+.user_name{
+    margin-top : 10px;
+    font-size : 18px;
+}
+
+
+
+.user_list{
+    overflow : hidden;
+}
+
+.user_ciddles{
+    padding : 15px 0;
+    display : flex;
+    border-top: 1px solid #f5f5f5;
+    background-color: #f8f8f8;
+    .user_ciddles_item{
+        flex : 1;
+        text-align : center;
+        font-size : 12px;
+        cursor : pointer;
+    }
+
+    .user_ciddles_num{
+        font-size : 20px;
+    }
+
+    .user_ciddles_item_active{
+        color : #196ade;
+    }
+}

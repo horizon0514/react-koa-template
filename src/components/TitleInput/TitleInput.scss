@@ -1,0 +1,80 @@
+.title {
+  margin-left: 4px;
+  margin-right: 8px;
+  position: relative;
+  //vertical-align: top;
+
+  .input {
+    vertical-align: top;
+    height: 40px;
+    display: inline-block;
+    border: 0;
+    margin-top: 11px;
+    max-width: 450px;
+    min-width: 80px;
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+    padding-left: 8px;
+    padding-right: 74px;
+    transition: border .3s;
+    border: 1px dotted transparent;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: padding-right .3s;
+
+    &:hover {
+      background: #fff;
+    }
+
+    &:focus {
+      max-width: none;
+      border-color: #aaa;
+      outline: 0;
+    }
+  }
+
+  .hint {
+    font-size: 12px;
+    color: #bbb;
+    position: absolute;
+    right: 8px;
+    pointer-events: none;
+    transition: opacity .3s;
+    opacity: 0;
+    transform: scale(0.9);
+    background: #fff;
+    height: 30px;
+    line-height: 30px;
+    top: -7px;
+
+    &:after {
+      position: absolute;
+      right: 16px;
+      white-space: nowrap;
+      background: inherit;
+      padding-left: 4px;
+      top: 0;
+      bottom: 0;
+    }
+
+    :global(.fa) {
+      margin-left: 3px;
+    }
+  }
+
+  .input:hover + .hint {
+    opacity: 1;
+    &:after {
+      content: '点击修改';
+    }
+  }
+
+  .input:focus + .hint {
+    opacity: 1;
+    &:after {
+      content: '回车保存';
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.tag{
+    position : relative;
+    display : inline-block;
+    margin-right : 10px;
+    color : #196ADE;
+    cursor : pointer;
+    &:before{
+        content : '#';
+        margin-right: 2px;
+        color: #aaa;
+        font-family: Consolas;
+    }
+
+    
+
+    &:hover{
+        :global(.tag-close){
+            opacity : 1;
+        }
+    }
+}
+
+:global{
+    .tag-close{
+        opacity: 0;
+        transition: opacity .2s;
+        color: #777;
+        transform: scale(.8);
+        position: absolute;
+        left: -1px;
+        background: #fff;
+        top: 3px;
+        cursor: pointer;
+    }
+}

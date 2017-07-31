@@ -1,0 +1,22 @@
+.weex_header{
+    text-align : center;
+    background-color : #222;
+    img {
+        vertical-align: middle;
+        max-width: 100%;       
+    }
+}
+
+.weex_bar{
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border-bottom: 1px solid #efefef;
+    background-color: #fff;
+}
+
+.weex_iframe{
+    height : calc(100vh - 142px);
+}
