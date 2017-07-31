@@ -20,7 +20,7 @@ export default {
     basement : {
       appId: '58058bf2849aea3ae64a6bb7',
       masterKey: '_WwmD-TB1nYHlXyf34wBuHZ5',
-      endpoint: 'http://basement-api.stable.alipay.net'
+      endpoint: 'http://basement.stable.alipay.net'    
     }
   }),
 
@@ -40,7 +40,7 @@ export default {
     basement : {
       appId: '5805899411ef0fa95b1f5a5d',
       masterKey: '4bx9gZaKB85BHUrvKRO2foAj',
-      endpoint: 'https://basement-gzone.alipay.com'
+      endpoint: 'https://basement.alipay.com'          
     }
   })
 }

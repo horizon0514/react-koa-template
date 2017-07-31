@@ -6,10 +6,8 @@ import webpackConfig from '../build/webpack.config'
 import historyApiFallback from 'koa-connect-history-api-fallback'
 import serve from 'koa-static'
 import proxy from 'koa-proxy'
-//import taobaostatus from 'koa-taobaostatus'
 import staticCache from 'koa-static-cache'
 import api from './api'
-import buc from 'koa-buc'
 import session from 'koa-session'
 import _debug from 'debug'
 import config from '../config'
@@ -25,39 +23,12 @@ if (config.proxy && config.proxy.enabled) {
   app.use(convert(proxy(config.proxy.options)))
 }
 
-app.keys = ['ciddle', 'wild']
+app.keys = ['your keys']
 app.use(session(app))
-
-const bucOptions = {
-  appname: 'f2e-services',
-  clientType: 'rest',
-  userFieldFormater(user) {
-    const newUser = { ...user }
-    newUser.notification = true
-    delete newUser.ssoUser.adAccounts
-    return newUser
-  } 
-}
-
-if(config.env === 'production'){
-    bucOptions.ssoURL = 'https://login.alibaba-inc.com'
-}
-
-app.use(buc(pathname => (
-  (pathname === '/' || pathname.startsWith('/api') || path.extname(pathname) === '')
-  && pathname.indexOf('webpack') < 0
-), bucOptions))
 
 
 app.use(api.routes())
 
-
-// Aone 部署失败增加
-// app.use(taobaostatus({
-//   checkAvailable: function* () {
-//     return true
-//   }
-// }))
 
 // This rewrites all routes requests to the root /index.html file
 // (ignoring file requests). If you want to implement isomorphic

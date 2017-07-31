@@ -2,7 +2,6 @@ import webpack from 'webpack'
 import cssnano from 'cssnano'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import CopyWebpackPlugin from 'copy-webpack-plugin'
 import config from '../config'
 import _debug from 'debug'
 
@@ -19,10 +18,10 @@ const webpackConfig = {
     root: paths.client(),
     extensions: ['', '.js', '.jsx', '.json']
   },
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
-  },
+  // externals: {
+  //   "react": "React",
+  //   "react-dom": "ReactDOM"
+  // },
   module: {}
 }
 // ------------------------------------
@@ -53,23 +52,12 @@ webpackConfig.output = {
 // ------------------------------------
 webpackConfig.plugins = [
   new webpack.DefinePlugin(config.globals),
-  new CopyWebpackPlugin([{from : './node_modules/weex-html5/dist/weex.min.js'}]),
   new HtmlWebpackPlugin({
     template: paths.client('index.html'),
     hash: false,
-    favicon: paths.client('static/favicon.png'),
+    favicon: paths.client('static/images/favicon.ico'),
     filename: 'index.html',
     inject: 'body',
-    minify: {
-      collapseWhitespace: true
-    }
-  }),
-  new HtmlWebpackPlugin({
-    template: paths.client('weex.html'),
-    hash: false,
-    favicon: paths.client('static/favicon.png'),
-    filename: 'weex.html',
-    inject: false,
     minify: {
       collapseWhitespace: true
     }
@@ -85,7 +73,6 @@ if (__DEV__) {
 } else if (__PROD__) {
   debug('Enable plugins for production (OccurenceOrder, Dedupe & UglifyJS).')
   webpackConfig.plugins.push(
-    new CopyWebpackPlugin([{from : './src/utils/cui-version.json'}]),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({

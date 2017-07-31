@@ -7,8 +7,8 @@ import { Provider } from 'react-redux'
 import createStore from './store/createStore'
 require('es6-promise').polyfill()
 
-
-import './utils/fetch-config'
+// Fetch 的全局预设置
+// import './utils/fetch-config'
 
 
 // ========================================================

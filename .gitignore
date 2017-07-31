@@ -2,8 +2,6 @@
 *.log
 
 node_modules
-weex
-git-m
 
 dist
 coverage
